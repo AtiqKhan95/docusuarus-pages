@@ -3,46 +3,57 @@ backend:
   repo: AtiqKhan95/docusuarus-pages
   branch: main
 
-collections:
+media:
+  input: static/img
+  output: /img
+  path: static/img
+  extensions: [jpg, jpeg, png, gif, svg]
+  categories: [image]
+
+content:
   - name: "blog"
     label: "Blog Posts"
-    folder: "blog"
-    create: true
-    format: "frontmatter"
-    extension: "md"
+    type: collection
+    path: blog
+    format: yaml-frontmatter
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Author", name: "author", widget: "string", required: false }
+      - { label: "Title", name: "title", type: "string" }
+      - { label: "Publish Date", name: "date", type: "date" }
+      - { label: "Featured Image", name: "thumbnail", type: "image", required: false }
+      - { label: "Body", name: "body", type: "rich-text" }
+      - { label: "Tags", name: "tags", type: "string", list: true, required: false }
+      - { label: "Author", name: "author", type: "string", required: false }
+    view:
+      fields: [title, date, author]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
 
   - name: "docs"
     label: "Documentation"
-    folder: "docs"
-    create: true
-    format: "frontmatter"
-    extension: "md"
+    type: collection
+    path: docs
+    format: yaml-frontmatter
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Order", name: "sidebar_position", widget: "number", required: false }
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Title", name: "title", type: "string" }
+      - { label: "Body", name: "body", type: "rich-text" }
+      - { label: "Order", name: "sidebar_position", type: "number", required: false }
+      - { label: "Description", name: "description", type: "text", required: false }
+    view:
+      fields: [title, sidebar_position]
+      primary: title
+      sort: [sidebar_position, title]
 
   - name: "config"
     label: "Site Configuration"
-    files:
-      - name: "general"
-        label: "General Settings"
-        file: "docusaurus.config.ts"
-        fields:
-          - { label: "Site Title", name: "title", widget: "string" }
-          - { label: "Site Tagline", name: "tagline", widget: "string" }
-          - { label: "Site Description", name: "description", widget: "text", required: false }
-          - { label: "GitHub URL", name: "githubUrl", widget: "string", required: false }
-          - { label: "Twitter URL", name: "twitterUrl", widget: "string", required: false }
-          - { label: "Discord URL", name: "discordUrl", widget: "string", required: false }
-
-media_folder: "static/img"
-public_folder: "/img"
+    type: file
+    path: docusaurus.config.ts
+    fields:
+      - { label: "Site Title", name: "title", type: "string" }
+      - { label: "Site Tagline", name: "tagline", type: "string" }
+      - { label: "Site Description", name: "description", type: "text", required: false }
+      - { label: "GitHub URL", name: "githubUrl", type: "string", required: false }
+      - { label: "Twitter URL", name: "twitterUrl", type: "string", required: false }
+      - { label: "Discord URL", name: "discordUrl", type: "string", required: false }
