@@ -36,6 +36,7 @@ content:
     type: collection
     path: docs
     format: yaml-frontmatter
+    subfolders: true
     fields:
       - { label: "Title", name: "title", type: "string" }
       - { label: "Body", name: "body", type: "rich-text" }
@@ -45,6 +46,7 @@ content:
       fields: [title, sidebar_position]
       primary: title
       sort: [sidebar_position, title]
+      search: [title, description]
 
   - name: "config"
     label: "Site Configuration"
