@@ -1,5 +1,5 @@
 ---
-title: Long Blog Post
+title: Long Blog Post omg
 tags:
   - hello
   - docusaurus
