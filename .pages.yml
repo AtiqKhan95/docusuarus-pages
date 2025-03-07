@@ -1,0 +1,39 @@
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "blog"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Author", name: "author", widget: "string", required: false }
+
+  - name: "docs"
+    label: "Documentation"
+    folder: "docs"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Order", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+
+  - name: "config"
+    label: "Site Configuration"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "docusaurus.config.ts"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "Site Tagline", name: "tagline", widget: "string" }
+          - { label: "Site Description", name: "description", widget: "text", required: false }
+          - { label: "GitHub URL", name: "githubUrl", widget: "string", required: false }
+          - { label: "Twitter URL", name: "twitterUrl", widget: "string", required: false }
+          - { label: "Discord URL", name: "discordUrl", widget: "string", required: false }
+
+media_folder: "static/img"
+public_folder: "/img"
