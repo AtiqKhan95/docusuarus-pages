@@ -38,7 +38,7 @@ content:
     format: yaml-frontmatter
     subfolders: true
     fields:
-      - { label: "Title", name: "title", type: "string", hidden: true }
+      - { label: "Title", name: "title", type: "string" }
       - { label: "Body", name: "body", type: "rich-text" }
       - { label: "Order", name: "sidebar_position", type: "number", required: false }
       - { label: "Description", name: "description", type: "text", required: false }
@@ -47,7 +47,8 @@ content:
       primary: title
       sort: [sidebar_position, title]
       search: [title, description]
-    filename: "{name}.md"
+    exclude: ["README.md"]
+    extension: "md"
 
   - name: "config"
     label: "Site Configuration"
