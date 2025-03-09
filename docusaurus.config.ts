@@ -69,7 +69,7 @@ const config: Config = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'bdr',
-        path: 'decision-docs/decision-docs/docs/bdr',
+        path: 'decision-docs/docs/bdr',
         routeBasePath: 'bdr',
         sidebarPath: require.resolve('./sidebars.ts'),
         docItemComponent: '@theme/DocItem',
@@ -82,7 +82,7 @@ const config: Config = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'rfx',
-        path: 'decision-docs/decision-docs/docs/rfx',
+        path: 'decision-docs/docs/rfx',
         routeBasePath: 'rfx',
         sidebarPath: require.resolve('./sidebars.ts'),
         docItemComponent: '@theme/DocItem',
@@ -95,7 +95,7 @@ const config: Config = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'tdy',
-        path: 'decision-docs/decision-docs/docs/tdy',
+        path: 'decision-docs/docs/tdy',
         routeBasePath: 'tdy',
         sidebarPath: require.resolve('./sidebars.ts'),
         docItemComponent: '@theme/DocItem',
