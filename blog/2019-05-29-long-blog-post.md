@@ -4,7 +4,8 @@ tags:
   - hello
   - docusaurus
 ---
-This is the summary of a very long blog post,
+This is the summary of a very long blog post, omg
+=======
 
 Use a `<!--` `truncate` `-->` comment to limit blog post size in the list view.
 
