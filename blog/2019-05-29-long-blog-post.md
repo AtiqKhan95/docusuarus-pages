@@ -1,10 +1,10 @@
 ---
-title: Long Blog Post - 2025
+title: Long Blog Post - omg
 tags:
   - hello
   - docusaurus
 ---
-This is the summary of a very long blog post, omg
+This is the summary of a very long blog post,
 =======
 
 Use a `<!--` `truncate` `-->` comment to limit blog post size in the list view.
