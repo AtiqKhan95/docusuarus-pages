@@ -64,6 +64,36 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'bdr',
+        path: 'decision-docs/decision-docs/bdr',
+        routeBasePath: 'bdr',
+        sidebarPath: require.resolve('./sidebars.ts'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'rfx',
+        path: 'decision-docs/decision-docs/rfx',
+        routeBasePath: 'rfx',
+        sidebarPath: require.resolve('./sidebars.ts'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'tdy',
+        path: 'decision-docs/decision-docs/tdy',
+        routeBasePath: 'tdy',
+        sidebarPath: require.resolve('./sidebars.ts'),
+      },
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -81,6 +111,27 @@ const config: Config = {
           label: 'Tutorial',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          type: 'doc',
+          docId: 'intro',
+          position: 'left',
+          label: 'BDR',
+          docsPluginId: 'bdr',
+        },
+        {
+          type: 'doc',
+          docId: 'intro',
+          position: 'left',
+          label: 'RFX',
+          docsPluginId: 'rfx',
+        },
+        {
+          type: 'doc',
+          docId: 'intro',
+          position: 'left',
+          label: 'TDY',
+          docsPluginId: 'tdy',
+        },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',

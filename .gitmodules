@@ -1,0 +1,3 @@
+[submodule "decision-docs"]
+	path = decision-docs
+	url = https://github.com/AtiqKhan95/decision-replica.git
