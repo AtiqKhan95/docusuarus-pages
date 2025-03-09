@@ -31,6 +31,12 @@ const config: Config = {
     locales: ['en'],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  themes: ['@docusaurus/theme-mermaid'],
+
   presets: [
     [
       'classic',
@@ -41,6 +47,8 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          remarkPlugins: [],
+          rehypePlugins: [],
         },
         blog: {
           showReadingTime: true,
@@ -68,35 +76,9 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'bdr',
-        path: 'decision-docs/docs/bdr',
-        routeBasePath: 'bdr',
-        sidebarPath: require.resolve('./sidebars.ts'),
-        docItemComponent: '@theme/DocItem',
-        remarkPlugins: [],
-        rehypePlugins: [],
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'rfx',
-        path: 'decision-docs/docs/rfx',
-        routeBasePath: 'rfx',
-        sidebarPath: require.resolve('./sidebars.ts'),
-        docItemComponent: '@theme/DocItem',
-        remarkPlugins: [],
-        rehypePlugins: [],
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'tdy',
-        path: 'decision-docs/docs/tdy',
-        routeBasePath: 'tdy',
+        id: 'decisions',
+        path: 'decision-docs/docs',
+        routeBasePath: 'decisions',
         sidebarPath: require.resolve('./sidebars.ts'),
         docItemComponent: '@theme/DocItem',
         remarkPlugins: [],
@@ -122,28 +104,14 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
+        {
+          type: 'doc',
+          docId: 'bdr/market-analysis-2024',
+          docsPluginId: 'decisions',
+          position: 'left',
+          label: 'Decisions',
+        },
         {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          type: 'doc',
-          docId: 'intro',
-          docsPluginId: 'bdr',
-          position: 'left',
-          label: 'BDR',
-        },
-        {
-          type: 'doc',
-          docId: 'intro',
-          docsPluginId: 'rfx',
-          position: 'left',
-          label: 'RFX',
-        },
-        {
-          type: 'doc',
-          docId: 'intro',
-          docsPluginId: 'tdy',
-          position: 'left',
-          label: 'TDY',
-        },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -160,6 +128,10 @@ const config: Config = {
             {
               label: 'Tutorial',
               to: '/docs/intro',
+            },
+            {
+              label: 'Decisions',
+              to: '/decisions/bdr/market-analysis-2024',
             },
           ],
         },
