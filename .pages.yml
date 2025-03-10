@@ -5,7 +5,7 @@ repositories:
 
   - name: "Decisions"
     repo: "AtiqKhan95/decision-replica"
-    path: "decision-replica"  # This is correct - it's the mount point in the main repo
+    path: "decision-docs"  # Changed from decision-replica to decision-docs
 
 media:
   - name: "Main Images"
@@ -14,7 +14,7 @@ media:
     output: "/img"
     extensions: [jpg, jpeg, png, gif, svg]
     
-  # Fix the path to include 'docs/'
+  # Updated paths to match the actual structure
   - name: "BDR Images"
     repository: "Decisions"
     input: "docs/bdr/images"
@@ -68,7 +68,7 @@ content:
     exclude: ["README.md"]
 
   - name: "config"
-    repository: "Main Docusaurus"  # Add this to be explicit
+    repository: "Main Docusaurus"
     label: "Site Configuration"
     type: file
     path: docusaurus.config.ts
@@ -80,8 +80,7 @@ content:
       - { label: "Twitter URL", name: "twitterUrl", type: "string", required: false }
       - { label: "Discord URL", name: "discordUrl", type: "string", required: false }
       
-  # Fix the path to point to the correct location
-  - name: "decisions"
+  - name: "decisions"  # Changed from "Decisions" to "decisions" for consistency
     repository: "Decisions"
     label: "Decisions"
     type: collection
