@@ -1,17 +1,28 @@
-backend:
-  name: github
-  repo: AtiqKhan95/docusuarus-pages
-  branch: main
+repositories:
+  - name: "Main Docusaurus"
+    repo: "AtiqKhan95/docusuarus-pages"
+    path: "/"
+
+  - name: "Decisions"
+    repo: "AtiqKhan95/decisions-replica"
+    path: "/"
 
 media:
-  input: static/img
-  output: /img
-  path: static/img
-  extensions: [jpg, jpeg, png, gif, svg]
-  categories: [image]
+  - name: "Main Images"
+    repository: "Main Docusaurus"
+    input: "static/img"
+    output: "/img"
+    extensions: [jpg, jpeg, png, gif, svg]
+    
+  - name: "Decisions assets"
+    repository: "Decisions"
+    input: "bdr/images"
+    output: "/decision_screenshots"
+    extensions: [jpg, jpeg, png, gif, svg]
 
 content:
   - name: "blog"
+    repository: "Main Docusaurus"
     label: "Blog Posts"
     type: collection
     path: blog
@@ -22,16 +33,9 @@ content:
       - { label: "Featured Image", name: "thumbnail", type: "image", required: false }
       - { label: "Body", name: "body", type: "rich-text" }
       - { label: "Tags", name: "tags", type: "string", list: true, required: false }
-      - { label: "Author", name: "author", type: "string", required: false }
-    view:
-      fields: [title, date, author]
-      primary: title
-      sort: [date, title]
-      default:
-        sort: date
-        order: desc
 
   - name: "docs"
+    repository: "Main Docusaurus"
     label: "Documentation"
     type: collection
     path: docs
@@ -48,7 +52,6 @@ content:
       sort: [sidebar_position, title]
       search: [title, description]
     exclude: ["README.md"]
-    extension: "md"
 
   - name: "config"
     label: "Site Configuration"
@@ -61,3 +64,21 @@ content:
       - { label: "GitHub URL", name: "githubUrl", type: "string", required: false }
       - { label: "Twitter URL", name: "twitterUrl", type: "string", required: false }
       - { label: "Discord URL", name: "discordUrl", type: "string", required: false }
+      
+  - name: "Decisions"
+    repository: "Decisions"
+    label: "Decisions"
+    type: collection
+    path: guides
+    format: yaml-frontmatter
+    fields:
+      - { label: "Title", name: "title", type: "string" }
+      - { label: "Body", name: "body", type: "rich-text" }
+      - { label: "Order", name: "sidebar_position", type: "number", required: false }
+      - { label: "Description", name: "description", type: "text", required: false }
+    view:
+      fields: [title, sidebar_position]
+      primary: title
+      sort: [sidebar_position, title]
+      search: [title, description]
+    exclude: ["README.md"]
