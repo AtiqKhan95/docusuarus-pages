@@ -69,7 +69,7 @@ content:
     repository: "Decisions"
     label: "Decisions"
     type: collection
-    path: guides
+    path: docs
     format: yaml-frontmatter
     fields:
       - { label: "Title", name: "title", type: "string" }
