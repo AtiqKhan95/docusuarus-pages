@@ -4,7 +4,7 @@ repositories:
     path: "/"
 
   - name: "Decisions"
-    repo: "AtiqKhan95/decisions-replica"
+    repo: "AtiqKhan95/decision-replica"
     path: "/"
 
 media:
