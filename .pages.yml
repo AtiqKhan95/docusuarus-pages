@@ -84,7 +84,7 @@ content:
     repository: "Decisions"
     label: "Decisions"
     type: collection
-    path: "docs"  # This is relative to the repository root
+    path: "decision-docs"  # This is relative to the repository root
     format: yaml-frontmatter
     subfolders: true  # Add this to support the subfolder structure
     fields:
