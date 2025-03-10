@@ -1,12 +1,3 @@
-repositories:
-  - name: "Main Docusaurus"
-    repo: "AtiqKhan95/docusaurus-pages"
-    path: "/"
-
-  - name: "Decisions"
-    repo: "AtiqKhan95/decision/replica"
-    path: "/"
-    
 backend:
   name: github
   repo: AtiqKhan95/docusuarus-pages
