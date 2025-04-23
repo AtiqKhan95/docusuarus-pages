@@ -5,7 +5,7 @@ repositories:
 
   - name: "Decisions"
     repo: "AtiqKhan95/decision-replica"
-    path: "decision-docs"  # Changed from decision-replica to decision-docs
+    path: "decision-docs"  
 
 media:
   - name: "Main Images"
